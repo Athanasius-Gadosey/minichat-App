@@ -1,0 +1,37 @@
+.navbar{
+    align-items: center;
+    display: flex;
+    background-color: #2f2d52;
+    height: 50px;
+    padding: 10px;
+    justify-content: space-between;
+    color: whitesmoke;
+}
+
+.brand__name{
+    font-weight: bold;
+}
+
+.user{
+    display: flex;
+    gap: 10px;
+}
+
+img{
+    background-color: whitesmoke;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+button{
+    background-color: #8f76c1f1;
+    color: whitesmoke;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+}
+
