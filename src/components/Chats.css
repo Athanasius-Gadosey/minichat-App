@@ -1,0 +1,15 @@
+.chats{}
+
+.user__chatinfo >span{
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.user__chatinfo > p{
+    font-size: 14px;
+    color: rgb(141, 139, 139);
+}
+
+.user__chat > img{
+    object-fit: cover;
+}

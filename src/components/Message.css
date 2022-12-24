@@ -1,0 +1,35 @@
+.message{
+    display: flex;
+    gap: 19px;
+    margin-bottom: 20px;
+}
+
+.message__info{
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    font-weight: 300;
+}
+
+.message__info > img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message__content{
+    max-width: 80%;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message__content > p{
+    padding: 10px 20px;
+    background-color: white;
+}
+
+.message__content > img{
+    width: 50%;
+}

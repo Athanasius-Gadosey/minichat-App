@@ -1,6 +1,7 @@
 // jshint esversion:6
 import React from 'react';
 import './Search.css';
+import Habib from '../img/habib.jpg'
 
 function Search() {
   return (
@@ -9,8 +10,8 @@ function Search() {
         <input type="text" placeholder='search a friend' />
       </div>
       <div className="user__chat">
-        <img src="./img/habib.jpg" alt="" />
-        <div className="chat__chatinfo">
+        <img src={Habib} alt="" />
+        <div className="user__chatinfo">
           <span>Jamal</span>
         </div>
       </div>

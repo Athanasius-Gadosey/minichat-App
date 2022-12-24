@@ -1,9 +1,21 @@
 // jshint esversion:6
-import React from 'react'
+import { AttachFile, PhotoAlbum } from '@mui/icons-material';
+import React from 'react';
+import './Input.css';
 
 function Input() {
   return (
-    <div>Input</div>
+    <div className='input'>
+      <input type="text" placeholder='express yourself...' />
+      <div className="send">
+        <AttachFile className='attach'/>
+        <input type="text" id='file'/>
+        <label htmlFor="file">
+          <PhotoAlbum />
+        </label>
+        <button>Send</button>
+      </div>
+    </div>
   )
 }
 
