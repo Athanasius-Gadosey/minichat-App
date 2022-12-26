@@ -1,14 +1,14 @@
 // jshint esversion:6
 import './App.css';
-import Home from './screens/Home';
+// import Home from './screens/Home';
 // import Login from './screens/Login';
-// import Register from './screens/Register';
+import Register from './screens/Register';
 
 
 function App() {
   return (
     <div className="App">
-     <Home />
+     <Register />
      {/* <Login />
      <Register /> */}
     </div>

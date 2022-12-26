@@ -2,6 +2,15 @@
     display: flex;
     gap: 19px;
     margin-bottom: 20px;
+    flex-direction: row-reverse;
+}
+
+.message > p{
+    background-color: #8da4f1;
+    color: whitesmoke;
+    border-radius: 10px 0px 10px 10px;
+    max-width: max-content;
+
 }
 
 .message__info{
@@ -23,11 +32,13 @@
     gap: 10px;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 }
 
 .message__content > p{
     padding: 10px 20px;
     background-color: white;
+    border-radius: 0px 10px 10px 10px;
 }
 
 .message__content > img{
