@@ -2,14 +2,17 @@
 import React, { useState } from 'react';
 import './Register.css';
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth, storage } from '../Firebase';
+import { auth, db, storage } from '../Firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 // import { async } from '@firebase/util';
 import { doc, setDoc } from 'firebase/firestore';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Register() {
   const [err, setErr] = useState(false);
+  const navigate = useNavigate()
+
   const handleSubmit = async (e) =>{
     e.preventDefault();
     const displayName = e.target[0].value;
@@ -37,7 +40,17 @@ function Register() {
           await updateProfile(res.user,{
             displayName,
             photoURL:downloadURL,
-          })
+          });
+          // Add a new document in collection 
+          await setDoc(doc(db, 'users', res.user.uid), {
+            uid: res.user.uid,
+            displayName,
+            email,
+            photoURL: downloadURL,
+          });
+
+          await setDoc(doc(db, 'user__chats', res.user.id), {});
+          navigate('/');
       });
   }
 );
@@ -51,7 +64,7 @@ function Register() {
   return (
     <div className='form__container'>
         <div className="form__wrapper">
-          <span className='brand__name'>NotesMuNotes Chat</span>
+          <span className='brand__name'>Santacy Chat</span>
           <span className='register'>Register</span>
             <form action="" onSubmit={handleSubmit}>
                 <input type="text" placeholder='enter your name' />
@@ -63,9 +76,9 @@ function Register() {
                     <span>Add an avatar</span>
                 </label>
                 <button>Sign Up</button>
-                {err && <span>There is Something Wrong</span> }
+                {err && <span>Oops!! Something Went Wrong</span>}
             </form>
-            <p>Already a member? Login</p>
+            <p>Already a member? <Link to='/login'>Login</Link></p>
         </div>
     </div>
   )

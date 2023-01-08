@@ -1,16 +1,21 @@
 // jshint esversion:6
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
-import Avengers from '../img/avengers.jpg'
+// import Avengers from '../img/avengers.jpg'
+import { signOut } from 'firebase/auth';
+import { auth } from '../Firebase';
+import { AuthContext } from '../context/AuthContext';
 
 function Navbar() {
+  const {currentUser} = useContext(AuthContext)
+  
   return (
     <div className='navbar'>
       <span className='brand__name'>NoMuNo chat</span>
       <div className="user">
-        <img src={Avengers} alt="" />
-        <span>Habib</span>
-        <button>Logout</button>
+        <img src={currentUser.photoURL} alt="" />
+        <span> {currentUser.displayName} </span>
+        <button onClick={() => signOut(auth)}>Logout</button>
       </div>
     </div>
   )
